@@ -21,9 +21,16 @@ jobs:
     - name: Push to Releases
       uses: ncipollo/release-action@v1
       with:
-         artifacts: /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app
-         tag: v1.0.${{ github.run_number }}
-         token: ${{ secrets.APP_CENTER_TOKEN }}
+          app: kumarvineet011/Swift
+          token: ${{secrets.APP_CENTER_TOKEN}}
+          group: Test
+         # build-number: ${{ github.run_number }}
+          path: /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app
+          mandatory: true
+          silent: false
+          release_notes: "Deployment successed"  
+          
+          
    
    
 #     - name: Distribute app to App Center
@@ -37,6 +44,12 @@ jobs:
 #           mandatory: true
 #           silent: false
 #           release_notes: "Deployment successed"  
+
+
+
+
+
+
           
 #     - name: Distribute app to App Center
 #       uses: akiojin/appcenter-distribute-github-action@v1
