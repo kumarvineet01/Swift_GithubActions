@@ -11,6 +11,6 @@ jobs:
     - name: Build
       run: xcodebuild -scheme Sample build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED="NO" CODE_SIGN_ENTITLEMENTS="" CODE_SIGNING_ALLOWED="NO"
     - name: Check_file & Path
-      run: ls -l /Users/runner/work/Swift_GithubActions/Swift_GithubActions/usr/bin/touch
+      run: ls -l /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos
                 
 
