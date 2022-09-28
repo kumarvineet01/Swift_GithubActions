@@ -12,7 +12,10 @@ jobs:
       run: xcodebuild -scheme Sample build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED="NO" CODE_SIGN_ENTITLEMENTS="" CODE_SIGNING_ALLOWED="NO"
     - name: Check_file & Path
       run: ls -l /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos
-       
+    
+    - name: Permission
+      run: cd /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/sudo chmod 777 Sample.app   
+   
     - name: Distribute app to App Center
       uses: akiojin/appcenter-distribute-github-action@v1
       with:
