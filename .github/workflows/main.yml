@@ -25,7 +25,7 @@ jobs:
           token: ${{secrets.APP_CENTER_TOKEN}}
           group: Test
           build-number: ${{ github.run_number }}
-          artifact: /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app
+          artifacts: /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app
           mandatory: true
           silent: false
           release_notes: "Deployment successed"  
