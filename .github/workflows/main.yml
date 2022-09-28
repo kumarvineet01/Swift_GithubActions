@@ -13,8 +13,12 @@ jobs:
     - name: Check_file & Path
       run: ls -l /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos
     
-    - name: Permission
-      run: cd /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos && sudo chmod 777 Sample.app   
+#     - name: Permission
+#       run: cd /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos && sudo chmod 777 Sample.app   
+    - name: Permissions
+      run: sudo chmod -R 777 /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products
+   
+   
    
     - name: Distribute app to App Center
       uses: akiojin/appcenter-distribute-github-action@v1
