@@ -33,20 +33,32 @@ jobs:
           
    
    
-    - name: Distribute app to App Center
-      uses: akiojin/appcenter-distribute-github-action@v1
+#     - name: Distribute app to App Center
+#       uses: akiojin/appcenter-distribute-github-action@v1
+#       with:
+#           app: kumarvineet011/Swift
+#           token: ${{secrets.APP_CENTER_TOKEN}}
+#           group: 'Test'
+#           build-number: ${{ github.run_number }}
+#           #release_name: ${{ github.run_number }}
+#           path: /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app
+#           mandatory: true
+#           silent: false
+#           #release_notes: "Deployment successed"  
+
+    - name: App Center
+        # You may pin to the exact commit or the version.
+        # uses: wzieba/AppCenter-Github-Action@650c903ea6a81c71e011b0a303ae555f2dbf76a0
+      uses: wzieba/AppCenter-Github-Action@v1.3.3
       with:
-          app: kumarvineet011/Swift
+          # App name followed by username e.g. wzieba/Sample-App
+          appName: kumarvineet011/Swift
+          # Upload token - you can get one from appcenter.ms/settings
           token: ${{secrets.APP_CENTER_TOKEN}}
+          # Distribution group
           group: 'Test'
-          build-number: ${{ github.run_number }}
-          #release_name: ${{ github.run_number }}
-          path: /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app
-          mandatory: true
-          silent: false
-          #release_notes: "Deployment successed"  
-
-
+          # Artefact to upload (.apk or .ipa)
+          file: /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app
 
 
 
