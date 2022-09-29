@@ -43,7 +43,7 @@ jobs:
           path: /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app
           mandatory: true
           silent: false
-          release_notes: "Deployment successed"  
+          #release_notes: "Deployment successed"  
 
 
 
