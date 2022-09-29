@@ -21,6 +21,7 @@ jobs:
     - name: Installing AppCenter Cli
       run: |
           npm install --location=global appcenter-cli
+          appcenter login: kumarvineet01
           appcenter tokens list
     
           
