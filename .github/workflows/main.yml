@@ -50,7 +50,7 @@ jobs:
           token: ${{secrets.APP_CENTER_T}}
           group: 'Tests'
           build-number: ${{ github.run_number }}
-          path: Build/Products/Debug-iphoneos/Sample.app
+          path: /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app
           mandatory: true
           silent: false
           #release_notes: "Deployment successed"  
