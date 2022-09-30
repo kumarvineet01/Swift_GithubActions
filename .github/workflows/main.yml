@@ -46,7 +46,7 @@ jobs:
     - name: Distribute app to App Center
       uses: akiojin/appcenter-distribute-github-action@v1
       with:
-          app: kumarvineet01/Swift
+          app: kumarvineet011/Swift
           token: ${{secrets.APP_CENTER_TOKEN}}
           group: 'Test'
           build-number: ${{ github.run_number }}
