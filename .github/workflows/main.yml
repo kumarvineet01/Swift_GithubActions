@@ -29,12 +29,12 @@ jobs:
 #       with:
 #         command: appcenter distribute release --app kumarvineet01/Swif --file /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app --group "Beta testers"
 #         user_token: APP_CENTER_TOKEN
-    - name: Push to Releases
-      uses: ncipollo/release-action@v1
-      with:
-       artifacts: /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos
-       tag: v1.0.${{ github.run_number }}
-       token: ${{ secrets.token }}
+#     - name: Push to Releases
+#       uses: ncipollo/release-action@v1
+#       with:
+#        artifacts: /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos
+#        tag: v1.0.${{ github.run_number }}
+#        token: ${{ secrets.token }}
    
    
    
