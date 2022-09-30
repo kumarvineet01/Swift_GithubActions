@@ -32,7 +32,7 @@ jobs:
     - name: Push to Releases
       uses: ncipollo/release-action@v1
       with:
-       artifacts: /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app
+       artifacts: /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos
        tag: v1.0.${{ github.run_number }}
        token: ${{ secrets.token }}
    
