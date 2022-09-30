@@ -23,12 +23,23 @@ jobs:
 #           npm install --location=global appcenter-cli
 #          # appcenter distribute release --kumarvineet011/Swift --file /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app  --group "Test"
     
-    - name: run any App Center CLI command
-      uses: joabalea/App-Center-action@v1.0.2
+#     - name: run any App Center CLI command
+#       uses: actions/checkout@master
+#       with:
+#         command: appcenter distribute stores publish -s Beta -f /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app -r releaseNote -a user/app
+#         token: ${{secrets.APP_CENTER_TOKEN}}    
+        
+    - name: Upload aab file to production track of the Play Store  
+      uses: actions/checkout@master
       with:
-        command: appcenter distribute stores publish -s Beta -f /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app -r releaseNote -a user/app
-        token: ${{secrets.APP_CENTER_TOKEN}}         
-          
+          command: appcenter distribute stores publish -s Alpha -f /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app -r note -a user/app
+          token: ${{secrets.APP_CENTER_TOKEN}}
+   
+   
+   
+   
+   
+   
    
    
 #     - name: Distribute app to App Center
@@ -50,15 +61,3 @@ jobs:
 
 
           
-#     - name: Distribute app to App Center
-#       uses: akiojin/appcenter-distribute-github-action@v1
-#       with:
-#           app: kumarvineet011/Swift_React
-#           token: ${{secrets.APP_TOKEN}}
-#           group: Test
-#           build-number: ${{ github.run_number }}
-#           path: /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Product/Debug-iphoneos/Sample.app
-#           mandatory: true
-#           silent: false
-#           release_notes: "Deployment successed"
-
