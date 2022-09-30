@@ -23,18 +23,12 @@ jobs:
 #           npm install --location=global appcenter-cli
 #          # appcenter distribute release --kumarvineet011/Swift --file /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app  --group "Test"
     
-#     - name: run any App Center CLI command
-#       uses: actions/checkout@master
-#       with:
-#         command: appcenter distribute stores publish -s Beta -f /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app -r releaseNote -a user/app
-#         token: ${{secrets.APP_CENTER_TOKEN}}    
-        
-    - name: Upload aab file to production track of the Play Store  
-      uses: actions/checkout@master
+
+    - name: App Center CLI Action
+      uses: vhsantos26/app-center-cli-action@v1
       with:
-          command: appcenter distribute stores publish -s Alpha -f /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app -r note -a user/app
-          token: ${{secrets.APP_CENTER_TOKEN}}
-   
+        command: appcenter distribute release --app kumarvineet01/Swif --file /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app --group "Beta testers"
+        user_token: APP_CENTER_TOKEN
    
    
    
@@ -49,7 +43,6 @@ jobs:
 #           token: ${{secrets.APP_CENTER_TOKEN}}
 #           group: 'Test'
 #           build-number: ${{ github.run_number }}
-#           #release_name: ${{ github.run_number }}
 #           path: /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app
 #           mandatory: true
 #           silent: false
