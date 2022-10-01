@@ -11,10 +11,10 @@ jobs:
    
     
     
-#     - name: Build
-#       run: xcodebuild -scheme Sample build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED="NO" CODE_SIGN_ENTITLEMENTS="" CODE_SIGNING_ALLOWED="NO"
-#     - name: Check_file & Path
-#       run: ls -l /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos
+    - name: Build
+      run: xcodebuild -scheme Sample build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED="NO" CODE_SIGN_ENTITLEMENTS="" CODE_SIGNING_ALLOWED="NO"
+    - name: Check_file & Path
+      run: ls -l /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos
     
 #     - name: Permission
 #       run: cd /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos && sudo chmod 777 Sample.app   
@@ -57,6 +57,19 @@ jobs:
 #           mandatory: true
 #           silent: false
 #           #release_notes: "Deployment successed"  
+          
+    - name: Distribute app to App Center
+      uses: akiojin/appcenter-distribute-github-action@v1
+      with:
+          owner: kumarvineet001
+          app: Swift
+          token: ${{secrets.APP_CENTER_TOKEN}}
+          group: 'Tests'
+          build-number: ${{ github.run_number }}
+          path: /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos/Sample.app
+          mandatory: true
+          silent: false
+          #release_notes: "Deployment successed"  
 
   
 
