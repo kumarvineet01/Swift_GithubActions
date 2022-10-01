@@ -2,16 +2,20 @@ name: CI
 on: [push]
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v1
 #     - name: Force Xcode 11
 #       run: sudo xcode-select -switch /Applications/Xcode_11.3.app
-    - name: Build
-      run: xcodebuild -scheme Sample build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED="NO" CODE_SIGN_ENTITLEMENTS="" CODE_SIGNING_ALLOWED="NO"
-    - name: Check_file & Path
-      run: ls -l /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos
+    - name: Installing Swift
+      run: sudo apt-get install \ binutils \ git \ gnupg2 \ libc6-dev \ libcurl4 \ libedit2 \ libgcc-9-dev \ libpython2.7 \ libsqlite3-0 \ libstdc++-9-dev \ libxml2 \ libz3-dev \ pkg-config \ tzdata \ uuid-dev \ zlib1g-dev
+    
+    
+#     - name: Build
+#       run: xcodebuild -scheme Sample build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED="NO" CODE_SIGN_ENTITLEMENTS="" CODE_SIGNING_ALLOWED="NO"
+#     - name: Check_file & Path
+#       run: ls -l /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos
     
 #     - name: Permission
 #       run: cd /Users/runner/Library/Developer/Xcode/DerivedData/Sample-ajkvlmokubtdumcligemudukvmyv/Build/Products/Debug-iphoneos && sudo chmod 777 Sample.app   
